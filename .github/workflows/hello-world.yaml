@@ -6,6 +6,8 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Hello, World!"
+      - uses: actions/checkout@v4\
+      - env: 
+          NAME: ${{secrets.NAME}}
+      - run: echo "Hello, $NAME!"
       - run: cat requirements.txt
